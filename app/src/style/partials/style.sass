@@ -1,0 +1,319 @@
+body
+  max-width: 100%
+  overflow-x: hidden
+  scrollbar-arrow-color: #fff
+  &::-webkit-scrollbar
+    width: 7px
+    background: $gray-light
+  &::-webkit-scrollbar-thumb
+    background-color: $gray-midlight
+.container, .content, .row, .col-lg-12,
+.col-lg-11, .col-lg-10, .col-lg-9, .col-lg-8,
+.col-lg-7, .col-lg-6, .col-lg-5, .col-lg-4, .col-lg-3,
+.col-lg-2, .col-lg-1
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+.grey
+  background-color: lighten($gray, 63%)
+.header
+  display: block
+  position: absolute
+  width: 100vw
+  padding: 10px 0px
+  height: 50px
+  background-color: rgba(0, 0, 0, 0.7)
+  z-index: 999
+.sticky
+  position: fixed
+  .logo-header
+    visibility: visible
+.logo-header
+  visibility: hidden
+  height: 50px
+.nav-menu
+  list-style-type: none
+  margin: 0
+  padding: 0
+.nav-tab
+  float: left
+  margin: auto 10px
+  cursor: pointer
+  a
+    font-size: 45px
+    color: $body-bg
+    opacity: 0.3
+    text-decoration: all 0.5s
+    -webkit-transition: all 0.5s
+    -moz-transition: all 0.5s
+    -ms-transition: all 0.5s
+    -o-transition: all 0.5s
+    transition: all 0.5s
+    &:hover
+      color: $brand-success
+      opacity: 1
+.login
+  display: block
+  font-size: 50px
+  width: 50px
+  height: 50px
+  color: $body-bg
+  cursor: pointer
+.home
+  width: 100vw
+.dot
+  position: absolute
+  width: 100%
+  height: 100%
+  background: url('../img/overlay.png')
+.level-up
+  display: block
+  position: absolute
+  width: 100%
+  top: 0
+.main-logo
+  margin-top: 30%
+.main-logo
+  img
+    height: 100px
+.slogan
+  font-family: 'Comfortaa', cursive
+  font-weight: 800
+  font-size:  floor(($font-size-base * 6))
+  color: $brand-yellow
+.nav-arrow
+  font-size: 60px
+  margin: 50px 0 0
+  padding: 0
+  display: block
+  position: relative
+  width: 50px
+  height: 50px
+  left: calc(50% - 25px)
+  -webkit-border-radius: 50%
+  border-radius: 50%
+  border: 3px solid $body-bg
+  color:  $body-bg
+  text-align: center
+  line-height: 0.5em
+  cursor: pointer
+.video
+  max-height: 100%
+  overflow: hidden
+video
+  height: 100%
+  width: 100%
+.advert
+  // height: 1px
+.heading-advert
+  font-family: $font-family-comforta
+  font-size: floor(($font-size-base * 5))
+  font-weight: 600
+  color: $brand-success
+  margin: 0.5em
+  display: block
+  text-shadow: 2px 2px 2px darken($brand-success, 25%)
+.green
+  background-color: $brand-success
+  display: block
+  height: 100%
+.big-circle
+  display: table
+  margin-left: -325px
+  top: calc(50% - 300px)
+  height: 650px
+  width: 650px
+  -webkit-border-radius: 50%
+  border-radius: 50%
+  background-color: rgba(256, 256, 256, 0.5)
+  p
+    display: table-cell
+    text-align: center
+    vertical-align: middle
+    img
+      display: inline-block
+      max-height: 600px
+      max-width: 600px
+.shop, .shipment, .contact
+  padding: 50px
+.shipment
+  font-size: $font-size-large
+  line-height: 1.5
+.head-section
+  font-family: $font-family-sans-serif
+  font-size:  8em
+  margin-left: 0.5em
+  color: $gray-lighter
+  text-shadow: 1px 1px 2px $gray-light
+// product
+.product-list
+  list-style-type: none
+  margin: 0
+  padding: 0
+  li
+    display: inline-flex
+    width: 33%
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+    &:nth-child(-n+2)
+      border-right: 4px solid
+      border-color:  $gray-lighter
+.product
+  width: 100% !important
+  text-align: center
+  &:hover
+    .product-picture
+      -webkit-filter: grayscale(0%);
+      filter: grayscale(0%);
+  &-name
+    font-size:  $font-size-h2
+    font-weight: 600
+    color: $brand-success
+  &-picture
+    font-size:  $font-size-h3
+    display: inline-block
+    text-align: center
+    color: $brand-success
+    text-align: right
+    -webkit-filter: grayscale(30%);
+    filter: grayscale(30%);
+    -webkit-transition: all .5s
+    -moz-transition: all .5s
+    -ms-transition: all .5s
+    -o-transition: all .5s
+    transition: all .5s
+    img
+      height: 300px
+  &-price
+    color: $brand-success
+    font-size:  $font-size-h3
+    text-align: right
+    span
+      font-size:  $font-size-h4
+  &-btn
+    font-size: $font-size-h3
+    padding:  5px 20px
+    border: 3px solid
+    border-color:   $brand-success
+    -webkit-border-radius: 3px
+    border-radius: 3px
+    color:  $brand-success
+    cursor: pointer
+    background-color: $body-bg
+    -webkit-transition: all .8s
+    -moz-transition: all .8s
+    -ms-transition: all .8s
+    -o-transition: all .8s
+    transition: all .8s
+    &:hover
+      background-color: $brand-success
+      color: $body-bg
+    &:focus
+      outline: $brand-success auto 5px
+// product
+.to-shop
+  font-size:  $font-size-h3
+  margin-top: 20px
+  color:  $brand-danger
+  cursor: pointer
+  &:hover
+    color:  $brand-success
+  &:after
+    position: absolute
+    content: ' '
+    visibility: hidden
+    bottom: 0
+    left: -50%
+    background-color: $brand-danger
+    width: 80%
+    height: 3px
+    -webkit-transition: all .5s cubic-bezier(0.4, 0, 1, 1) 0s
+    -moz-transition: all .5s cubic-bezier(0.4, 0, 1, 1) 0s
+    -ms-transition: all .5s cubic-bezier(0.4, 0, 1, 1) 0s
+    -o-transition: all .5s cubic-bezier(0.4, 0, 1, 1) 0s
+    transition: all .5s cubic-bezier(0.4, 0, 1, 1) 0s
+  &:hover:after
+    visibility: visible
+    background-color: $brand-success
+    left: 50px
+.contact
+  background: url('../img/bg-contact.png'), url('../img/3ring.png')no-repeat 150% -60%
+// form
+.form
+  &-group
+    margin-bottom: 15px
+    label
+      display: none
+      margin-bottom: 5px
+      font-weight: 800
+      color: $gray-dark
+  &-control
+    font-size: $font-size-large
+    display: block
+    width: 100%
+    height: 34px
+    padding: 6px 12px
+    border: 1px solid
+    border-color: $gray-midlight
+    -webkit-border-radius: 4px
+    border-radius: 4px
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+    color: $gray
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075)
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075)
+    &:focus
+      outline: $brand-success auto 5px
+  textarea.form-control
+    height: auto
+.btn-default
+  @extend .product-btn
+  color:  $gray-light
+  border-color:  $gray-light
+  -webkit-transition: all .75s
+  -moz-transition: all .75s
+  -ms-transition: all .75s
+  -o-transition: all .75s
+  transition: all .75s
+  &:hover
+    border-color: $brand-success
+.upper
+  text-transform: uppercase
+.h2
+  font-size: floor(($font-size-base * 3))
+  font-weight: 600
+  display: block
+  margin-bottom: 0.5em
+  color:  $brand-success
+  text-align: center
+  text-shadow: 1px 1px 1px darken($brand-success, 30%)
+.h3
+  @extend .h2
+  font-size: floor(($font-size-base * 2))
+
+// form
+.thanks
+  padding:  5px
+  background-color: $gray
+  color: $gray-light
+  height: 40px
+// FOOTER
+.copyright
+  font-size: 16px
+  display: table-cell
+  padding: 5px 25px
+  height: 34px
+  width: 100%
+  vertical-align: middle
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+.reserved
+  display: block
+  margin-top: 13px
+.footer
+  &-logo
+    margin-top: 12px
+    width: 100px
