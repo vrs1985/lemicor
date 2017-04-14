@@ -1,0 +1,88 @@
+.product-card
+  display: inline-block
+  padding-top: 70px
+  width: 100%
+  min-height: calc(100vh - 50px)
+  +box-sizing(border-box)
+  &_feedback
+    &_heading
+      font-size: $font-size-h3
+  &_tab-pane
+    display: none
+  &_describe
+    font-size: $font-size-h4
+    padding: 0
+    list-style-type: none
+    li
+      margin-bottom: $padding-large-vertical
+  &_tab-content
+    margin-top: $padding-large-vertical
+    padding-top: $padding-large-vertical
+    padding-left: $padding-large-horizontal
+    min-height: 250px
+    border-top: 1px solid $gray-lighter
+    border-left: 1px solid $gray-lighter
+    .active
+      display: block
+  &_title
+    font-family: $font-family-monospace
+    margin-top:  ($padding-large-vertical * 2)
+    padding-bottom: $padding-base-vertical
+    text-align: center
+    font-size: $font-size-h2
+    text-decoration: none
+    color: $gray-darker
+  &_nav
+    list-style-type: none
+    padding: 0
+    border: 1px solid $gray-lighter
+    border-top: none
+    li
+      display: inline-block
+      padding: $padding-base-vertical $padding-base-horizontal
+      span
+        font-size: $font-size-h3
+        color: $gray-midlight
+        text-decoration: none
+        cursor: pointer
+        +transition(0.5s)
+        &:hover
+          color: $gray-dark
+  &_gallery
+    padding: 0
+    text-align: center
+    list-style-type:  none
+    width: 350px
+    height: 400px
+  .gallery-item
+    img
+      max-width: 100%
+      max-height: 350px
+    &_preview
+      img
+        cursor: pointer
+  &_price
+    @extend .product_price
+    text-align: center
+    .cost
+      font-size: 1.5em
+      color: $gray
+    .currency
+      color: $gray
+.feedback
+  padding: 0
+  list-style-type: none
+  &_customer
+    margin: $padding-small-vertical auto
+    border-bottom: 1px solid $gray-lighter
+    &_name
+      font-size: $font-size-h4
+      font-weight: 600
+      display: block
+      padding: $padding-base-vertical $padding-base-horizontal
+      color: $gray-base
+    &_feedback
+      display: block
+      padding: $padding-base-vertical $padding-large-horizontal
+      font-size: $font-size-h5
+      color: $gray-light

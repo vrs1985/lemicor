@@ -217,6 +217,11 @@ video
   margin-top: 20px
   color:  $brand-danger
   cursor: pointer
+  a
+    color:  $brand-danger
+    text-decoration: none
+    &:hover
+      color:  $brand-success
   &:hover
     color:  $brand-success
   &:after
@@ -294,11 +299,15 @@ video
   font-size: floor(($font-size-base * 2))
 
 // form
-.thanks
+.footer
   padding:  5px
   background-color: $gray
   color: $gray-light
   height: 40px
+  &-logo
+    margin-top: $padding-base-horizontal
+    margin-left: ($padding-small-horizontal * 3)
+    width: 130px
 // FOOTER
 .copyright
   font-size: 16px
@@ -313,7 +322,24 @@ video
 .reserved
   display: block
   margin-top: 13px
-.footer
-  &-logo
-    margin-top: 12px
-    width: 100px
+.social
+  margin: 0
+  padding: 0
+  list-style-type: none
+  &_network
+    display: inline-block
+    margin: 0 10px
+    cursor: pointer
+    a
+      font-size: 35px
+      color: #ccc
+      -webkit-transition: all 0.5s
+      -moz-transition: all 0.5s
+      -ms-transition: all 0.5s
+      -o-transition: all 0.5s
+      transition: all 0.5s
+      &:hover
+        color: rgb(102, 153, 204)
+.catalog
+  margin-top: 80px
+

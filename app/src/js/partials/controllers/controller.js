@@ -1,7 +1,7 @@
 var lemicor = angular.module('lemicor', []);
 
 
-lemicor.component('showcase', {
-  templateUrl:
-});
+// lemicor.component('showcase', {
+//   templateUrl: ;
+// });
 

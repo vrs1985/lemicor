@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Limonarium">
+<head>
+  <meta charset="UTF-8">
+  <title>Limonarium</title>
+    <meta name="description">
+  <meta content="author" name="">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="" >
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.min.js"></script> -->
+  <script src="js/main.js"></script>
+</head>
+<body>
+  <div class="header">
+    <div class="content">
+      <div class="row">
+        <div class="col-lg-8">
+          <img class="logo-header" src="/img/logo.png" alt="Limonarium.Corp">
+        </div>
+        <div class="col-lg-3">
+        <!-- BEGIN MENU -->
+          <div class="nav-line pull-right">
+            <ul class="nav-menu">
+              <li class="nav-tab"><a class="nav-home ion-ios-home-outline" ></a></li>
+              <li class="nav-tab"><a class="nav-shop ion-bag" ></a></li>
+              <li class="nav-tab"><a class="nav-shipment ion-paper-airplane" ></a></li>
+              <li class="nav-tab"><a class="nav-contact ion-ios-email-outline" ></a></li>
+              <li class="nav-tab"><a class="nav-cart ion-ios-cart-outline" ></a></li>
+            </ul>
+          </div>
+          <!-- END MENU -->
+        </div>
+        <div class="col-lg-1">
+          <div class="login ion-ios-contact"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+<sections class="product-card">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-sm-12 col-xs-12">
+        <div class="product-card_title">Лимон мейера</div>
+          <div class="row">
+            <div class="col-lg-5 col-sm-5 col-xs-12">
+              <ul class="product-card_gallery">
+                <li class="gallery-item">
+                  <img class="gallery-item_" src="img/products/lemontree.png" alt="Лимон мейера">
+                </li>
+                <div class="gallery-item_preview">
+                  <img src="http://dummyimage.com/50x50/4d494d/686a82.gif&text=placeholder+image" alt="placeholder+image">
+                  <img src="http://dummyimage.com/50x50/4d494d/686a82.gif&text=placeholder+image" alt="placeholder+image">
+                  <img src="http://dummyimage.com/50x50/4d494d/686a82.gif&text=placeholder+image" alt="placeholder+image">
+                  <img src="http://dummyimage.com/50x50/4d494d/686a82.gif&text=placeholder+image" alt="placeholder+image">
+                </div>
+              </ul>
+            </div>
+            <div class="col-lg-7 col-sm-7 col-xs-12">
+              <div class="product-card_price">
+                <span class="cost">485</span> <span class="currency">грн</span>
+                <div class="product-card_buy">
+                  <form>
+                    <input type="hidden" value="119" name="product_id">
+                    <span class="product-card_buy_btn-container">
+                        <button class="btn btn-success" type="submit"><i class="ion-ios-cart-outline"></i>Купить</button>
+                    </span>
+                  </form>
+                </div>
+              </div>
+              <!-- Nav tabs -->
+              <ul class="product-card_nav pull-right">
+                <li class="active"><span id="nav-character">Характеристики</span></li>
+                <li><span id="nav-describe">Описание</span></li>
+                <li><span id="nav-feedback">Отзывы</span></li>
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="product-card_tab-content">
+                <div class="product-card_tab-pane active" data-toggle="character">
+                  <ul class="product-card_describe">
+                    <li class="product-card_available"><strong>Наличие: </strong>Доступен</li>
+                    <li class="product-card_width"><strong>Высота: </strong>
+                      <select>
+                        <option value="-15">до 15см</option>
+                        <option value="15-30">16 - 30см</option>
+                        <option value="31-60">31-60см</option>
+                        <option value="61-100">61-100см</option>
+                        <option value="101">выше 101см</option>
+                      </select>
+                    </li>
+                    <li class="product-card_production"><strong>Производитель: </strong>Украина</li>
+                  </ul>
+                </div>
+                <div class="product-card_tab-pane" data-toggle="describe">
+                  Лимонное дерево, сорт "Мейера" для выращивания в домашних условиях.
+                  Внешний вид саженца лимонного дерева представляет собой укорененный прижившийся черенок.
+                  Высота лимонного дерева до 10 см. Плодоношения комнатный лимон достигнет через 36 месяцев.
+                </div>
+                <div class="product-card_tab-pane" data-toggle="feedback">
+                  <ul class="feedback">
+                    <span class="product-card_feedback_heading">Отзывы</span>
+                    <li class="feedback_customer">
+                      <span class="feedback_customer_name">Игорь Кононов</span>
+                      <span class="feedback_customer_feedback">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                      </span>
+                    </li>
+                  </ul>
+                  <form>
+                    <span class="product-card_feedback_heading">Оставить отзыв</span>
+                    <textarea class="form-control" rows="3" placeholder="Комментарий"></textarea>
+                    <input class="form-control" type="text" name="user-name" required="" placeholder="Имя">
+                    <input class="form-control" type="email" name="email" required="" placeholder="Эл. почта">
+                    <input class="btn-default pull-right" type="submit" name="" value="Оставить отзыв">
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- end product item -->
+      </div>
+    </div>
+  </div>
+</sections>
+<!-- BEGIN FOOTER -->
+<section class="footer">
+  <div class="row">
+    <div class="col-lg-3">
+        <img class="footer-logo" src="img/logo.png" alt="Limonarium.Corp">
+        <span class="reserved pull-right">All rights reserved&copy;</span>
+    </div>
+    <div class="col-lg-8"></div>
+    <div class="col-lg-2 pull-right">
+    <ul class="social">
+      <li class="social_network">
+        <a class="ion-social-facebook-outline" ></a>
+      </li>
+      <li class="social_network">
+        <a class="ion-social-twitter-outline" ></a>
+      </li>
+      <li class="social_network">
+        <a class="ion-pin" ></a>
+      </li>
+
+    </ul>
+    </div>
+  </div>
+</section>
+<!-- END THANK YOU BLOCK -->
+</body>
+</html>
