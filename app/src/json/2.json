@@ -1,0 +1,12 @@
+{
+  "id" : 2,
+  "genus" : "Цитрус",
+  "species" : "Лимон",
+  "name" : "Мейера",
+  "height" : "35",
+  "production" : "Украина",
+  "picture" : "img/products/lemontree.png",
+  "price" : "528",
+  "count" : "28",
+  "hot" : false
+}

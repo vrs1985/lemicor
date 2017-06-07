@@ -1,0 +1,35 @@
+<section class="cart "  ng-controller="limonAppCartCtrl as cart">
+<div class="container">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Номер</th>
+      <th>Наименование</th>
+      <th>Цена</th>
+      <th>Количество</th>
+      <th>Сумма</th>
+      <th>Удалить</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat='item in getOrders'>
+      <td>{{$index +1}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.price}}</td>
+      <td>{{item.num}}</td>
+      <td>{{item.price * item.num}}</td>
+      <td><span class="cart-remove-product ion-android-close" ng-click="removeOrder($index)"></span></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+    <div class="row">
+      <div class="col-lg-offset-10 col-lg-2">
+        <strong>Итого: {{ totalCost() }} грн</strong>
+      </div>
+    </div>
+    <a class="pull-right"><span>Оформить заказ</span></a>
+  </div>
+</section>

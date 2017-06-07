@@ -21,14 +21,14 @@ var path = {
         fonts: 'app/build/fonts/'
     },
   src: {
-      html: 'app/src/*.html',
+      html: 'app/src/**/*.html',
       js: 'app/src/js/*.js',
       style: 'app/src/style/*.sass',
       img: 'app/src/img/**/*.*',
       fonts: 'app/src/fonts/**/*.*'
     },
   watch: {
-    html: 'app/src/*.html',
+    html: 'app/src/**/*.html',
       js: 'app/src/js/**/*.*',
       style: 'app/src/style/**/*.*',
       img: 'app/src/img/**/*.*',

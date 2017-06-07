@@ -1,0 +1,26 @@
+.flag
+  font-weight: 600
+  display: block
+  position: absolute
+  top: 0px
+  right: 0px
+  font-size: $font-size-base
+  padding: $padding-small-vertical $padding-small-horizontal
+  opacity: 0.9
+  &_yellow
+    @extend .flag
+    border-bottom-left-radius: 8px
+    background-color: $brand-yellow
+  &_red
+    @extend .flag
+    border-bottom-left-radius: 8px
+    background-color: $brand-danger
+.hot
+  &_product
+    background-color: lighten($brand-yellow, 35%)
+  &_price
+    font-weight: 600
+    display: block
+    margin: 5px auto
+    height: 20px
+    color: $brand-danger

@@ -1,0 +1,12 @@
+{
+  "id" : 4,
+  "genus" : "Миртоцветовые",
+  "species" : "Гранат",
+  "name" : "Комнатный",
+  "height" : "34",
+  "production" : "Украина",
+  "picture" : "img/products/pomegranate.png",
+  "price" : "150",
+  "count" : "38",
+  "hot" : false
+}

@@ -10,8 +10,7 @@
  * Custom
  */
  //= partials/controllers/controller.js
- //= partials/models/model.js
- //= partials/services/service.js
+ //= partials/controllers/formCtrl.js
  //= partials/directives.js
  //= partials/filters.js
 //= partials/main-script.js

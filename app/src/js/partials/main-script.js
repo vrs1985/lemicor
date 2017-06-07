@@ -77,11 +77,10 @@
       let appCtrl = this;
       this.appModel = model;
       this.appView = view;
-      this.anchor = $('a');
+//       this.anchor = $('a');
 
       this.init = () => {
         this.events = new Events(document, this.scroll, this.click);
-        // this.clickAnchor = new Events(this.anchor, this.scroll, this.click);
       };
 
       this.scroll = (x) => {
@@ -89,9 +88,9 @@
       };
       this.click = (e) => {
         let nav = e.target.className.slice(0, 3);
-        if(nav == 'nav'){
-          this.appModel.smoothScroll(e.target.className);
-        }
+        // if(nav == 'nav'){
+        //   this.appModel.smoothScroll(e.target.className);
+        // }
         };
 
       this.init();
@@ -115,8 +114,6 @@ function Events(elem, scroll, click) {
   };
 
   this.elem.addEventListener('scroll', e => Events.scroll(e));
-
-  // this.elem.addEventListener('mousemove', e => Events.move(e));
 
   this.elem.addEventListener('click', e => Events.click(e));
 

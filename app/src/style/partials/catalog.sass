@@ -1,6 +1,14 @@
 .product
   display: inline-block
   padding-top: 70px
+  &_count
+    width: 45px
+    color: $gray-dark
+  &_details
+    text-align: right
+  &_buy
+    display: inline-block
+    cursor: pointer
   &_like
     .likes
       color: $brand-danger
@@ -12,8 +20,10 @@
       display: inline-block
       position: relative
       border: 1px solid lighten($gray-midlight, 25%)
-      margin-bottom: 5px
+      margin: 5px
       padding: 10px
+      width: 240px
+      height: 420px
   &_image
     width: 240px
     height: 250px
@@ -22,6 +32,10 @@
         max-width: 100%
         max-height: 100%
   &_title
+    display: block
+    height: 25px
+    -ms-overflow-y: hidden
+    overflow-y: hidden
     a
       text-decoration: none
       font-size: 1.2em
@@ -34,5 +48,6 @@
     -webkit-border-radius: 5px
     border-radius: 5px
     background-color: lighten($brand-warning, 20%)
-  &_buy
+  &_hot
+    background-color: $brand-danger !important
 

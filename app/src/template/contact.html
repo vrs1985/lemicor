@@ -1,0 +1,44 @@
+<!-- BEGIN CONTACT BLOCK -->
+  <section class="contact height">
+    <div class="row">
+      <div class="col-lg-12">
+        <span class='head-section'>
+          Контакты
+        </span>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-offset-3 col-lg-6">
+          <span class="h2 upper">Остались вопросы?</span>
+          <span class="h3">Задайте их нашему менеджеру!</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-offset-4 col-lg-4" ng-controller="sendFormCtrl as send">
+          <form class="form" name="sendMsg" novalidate ng-submit="send(text)">
+            <div class="form-group">
+              <label for="">Имя</label>
+              <input id="" class="form-control" type="text" ng-model="text.name" name="name" placeholder="Имя:" required >
+            </div>
+            <div class="form-group">
+              <label for="">Телефон</label>
+              <input id="" class="form-control" type="phone" ng-model="text.phone" name="phone" placeholder="Телефон:" required >
+            </div>
+            <div class="form-group">
+              <div class="error" ng-show="showError">
+                {{getError(sendMsg.email.$error)}}
+              </div>
+              <label for="">Email</label>
+              <input id="" class="form-control" type="email" ng-model="text.email" name="email" placeholder="Email:" required >
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" rows="5" name="msg" ng-model="text.msg" placeholder="Текст сообщения..." required ></textarea>
+            </div>
+            <input class="btn-default pull-right"  type="submit" name="" ng-disabled="sendMsg.$invalid" value="Связаться">
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- END CONTACT BLOCK -->

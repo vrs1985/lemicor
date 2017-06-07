@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="Limonarium">
+<html lang="en" ng-app="limonarium">
 <head>
   <meta charset="UTF-8">
   <title>Limonarium</title>
@@ -11,10 +11,11 @@
   <link rel="stylesheet" href="css/main.css">
   <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.min.js"></script> -->
   <script src="js/main.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.js"></script>
+
 </head>
-<body>
+<body ng-controller="limonAppCtrl">
   <div class="header">
     <div class="content">
       <div class="row">
@@ -25,11 +26,11 @@
         <!-- BEGIN MENU -->
           <div class="nav-line pull-right">
             <ul class="nav-menu">
-              <li class="nav-tab"><a class="nav-home ion-ios-home-outline" ></a></li>
-              <li class="nav-tab"><a class="nav-shop ion-bag" ></a></li>
-              <li class="nav-tab"><a class="nav-shipment ion-paper-airplane" ></a></li>
-              <li class="nav-tab"><a class="nav-contact ion-ios-email-outline" ></a></li>
-              <li class="nav-tab"><a class="nav-cart ion-ios-cart-outline" ></a></li>
+              <li class="nav-tab"><a class="nav-home ion-ios-home-outline" href="#/"></a></li>
+              <li class="nav-tab"><a class="nav-shop ion-bag" href="#/catalog"></a></li>
+              <li class="nav-tab"><a class="nav-shipment ion-paper-airplane" href="#/shipment"></a></li>
+              <li class="nav-tab"><a class="nav-contact ion-ios-email-outline" href="#/contact"></a></li>
+              <li class="nav-tab"><a class="nav-cart ion-ios-cart-outline" href="#/cart"></a><span class="count-cart">{{ orders.length}}</span></li>
             </ul>
           </div>
           <!-- END MENU -->
@@ -41,226 +42,8 @@
     </div>
   </div>
   <!-- END HEADER -->
-  <section class="home height">
-    <div class="dot height"></div>
-    <div class="video">
-      <video  autoplay loop="loop" poster="/img/main-picture.jpg">
-        <source src="Plant Time Lapse.mp4" type="" >
-      </video>
-    </div>
-    <div class="level-up">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg12">
-            <div class="main-logo">
-              <img src="img/logo.png">
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg12">
-            <span class="slogan">
-              Яркие моменты жизни
-            </span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg12">
-              <div class="nav-arrow ion-ios-arrow-down">
-              </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="advwinter" class="advert height">
-    <div class="content">
-      <div class="row">
-        <div class="col-lg-8">
-          <span class="heading-advert">Согреет <br> холодной <br> зимой</span>
-        </div>
-        <div class="col-lg-4 green height">
-          <figure class="big-circle">
-            <p>
-              <img src="img/picture/cup.png">
-            </p>
-          </figure>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="shop grey">
-    <div class="row">
-      <div class="col-lg-12">
-        <span class='head-section'>
-          Купить товар
-        </span>
-      </div>
-    </div>
-    <div class="container">
-        <div class="row">
-          <div class="col-lg-offset-1 col-lg-10">
-            <ul class="product-list">
-              <li><!-- Карточка товара -->
-                <figure class="product">
-                  <p class="product-name">Лимон Мейер</p>
-                  <p class="product-picture"><img src="img/products/lemontree.png" alt=""></p>
-                  <p class="product-price"> 600 <span>грн</span></p>
-                  <input type="button" class="product-btn pull-right" value="Заказать">
-                </figure>
-                <!-- Карточка товара -->
-                </li>
-              <li>
-              <!-- Карточка товара -->
-                <figure class="product">
-                  <p class="product-name">Гранат</p>
-                  <p class="product-picture"><img src="img/products/pomegranate.png" alt=""></p>
-                  <p class="product-price"> 250 <span>грн</span></p>
-                  <input type="button" class="product-btn pull-right" value="Заказать">
-                </figure>
-                <!-- Карточка товара -->
-                </li>
-              <li>
-              <!-- Карточка товара -->
-                <figure class="product">
-                  <p class="product-name">Розмарин</p>
-                  <p class="product-picture"><img src="img/products/rosemary.png" alt=""></p>
-                  <p class="product-price"> 150 <span>грн</span></p>
-                  <input type="button" class="product-btn pull-right" value="Заказать">
-                </figure>
-                <!-- Карточка товара -->
-                </li>
-            </ul>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-offset-10 col-lg-2">
-            <span class="to-shop pull-right"> <a href="catalog.html">к каталогу</a>  <span class="ion-android-arrow-forward"></span></span>
-            <span class="to-shop-underline"></span>
-          </div>
-        </div>
-      </div>
-  </section>
-<!-- BEGIN ADVERTISE BLOCK -->
-  <section class="advert height">
-    <div class="content">
-      <div class="row">
-        <div class="col-lg-8">
-          <span class="heading-advert">Охладит <br> жарким <br> летом</span>
-        </div>
-        <div class="col-lg-4 green height">
-          <figure class="big-circle">
-            <p>
-              <img src="img/picture/738.png">
-            </p>
-          </figure>
-        </div>
-      </div>
-    </div>
-  </section>
-<!-- END ADVERTISE BLOCK -->
+  <ng-view></ng-view>
 
-<!-- BEGIN CONDITIONS AND TERMS BLOCK -->
-  <section class="shipment grey height">
-    <div class="row">
-      <div class="col-lg-12">
-        <span class='head-section'>
-          Доставка товара
-        </span>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <p><strong> Оплата: </strong></p>
-          У нас Вы можете оплатить: <br>
-         <em>
-            - наличными в случае доставки курьером
-            - безналичный расчет по реквизитам*
-        </em>
-          <br><br>
-          <p><strong> Доставка по городам Днепр и Запорожье </strong></p>
-          <em>
-            - курьер по адресу - стоимость расчитывается в зависимости от расстояния
-            - доставка на сумму более 800 грн осуществляется бесплатно
-            - упаковка товара и доставка до Новой Почты на сумму менее 1000 грн - стоимость 25 грн
-          </em>
-          <br><br>
-          <p><strong> Доставка в другие регионы страны </strong></p>
-          <em>
-            Доставка Новой Почтой по предоплате по реквизитам. Стоимость пересылки зависит
-            от тарифов Новой Почты, но в среднем составляет 50-70 грн.
-            Также компания не несет ответственности за погрешности работы Новой Почты и делаем
-            все возможное чтобы товар пришел к Вам в наилучшем виде.
-            Также необходимо учитывать сезонность заказов т.к. в зимний период доставка Новой Почтой
-            не осуществляется в связи с температурным режимом.
-          </em>
-        </div>
-      </div>
-    </div>
-  </section>
-<!-- END CONDITIONS AND TERMS BLOCK -->
-
-  <!-- BEGIN ADVERTISE BLOCK -->
-  <section class="advert height">
-    <div class="content">
-      <div class="row">
-        <div class="col-lg-8">
-          <span class="heading-advert">Самый <br> лучший <br> подарок</span>
-        </div>
-        <div class="col-lg-4 green height">
-          <figure class="big-circle">
-          <p>
-            <img src="img/picture/lemon-in-pot.png">
-          </p>
-          </figure>
-        </div>
-      </div>
-    </div>
-  </section>
-<!-- END ADVERTISE BLOCK -->
-
-<!-- BEGIN CONTACT BLOCK -->
-  <section class="contact height">
-    <div class="row">
-      <div class="col-lg-12">
-        <span class='head-section'>
-          Контакты
-        </span>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-offset-3 col-lg-6">
-          <span class="h2 upper">Остались вопросы?</span>
-          <span class="h3">Задайте их нашему менеджеру!</span>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-offset-4 col-lg-4">
-          <form class="form">
-            <div class="form-group">
-              <label for="">Имя</label>
-              <input id="" class="form-control" type="text" name="" placeholder="Имя:">
-            </div>
-            <div class="form-group">
-              <label for="">Телефон</label>
-              <input id="" class="form-control" type="text" name="" placeholder="Телефон:">
-            </div>
-            <div class="form-group">
-              <label for="">Email</label>
-              <input id="" class="form-control" type="email" name="" placeholder="Email:">
-            </div>
-            <div class="form-group">
-              <textarea class="form-control" rows="5" placeholder="Текст сообщения..."></textarea>
-            </div>
-            <input class="btn-default pull-right" type="submit" name="" value="Связаться">
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-<!-- END CONTACT BLOCK -->
 <!-- BEGIN THANK YOU BLOCK -->
 <section class="footer">
   <div class="row">
