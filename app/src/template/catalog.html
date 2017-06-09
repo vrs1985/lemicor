@@ -2,31 +2,31 @@
 <sections class="product">
   <div class="container">
     <div class="row">
-      <div class="col-lg-12 col-sm-12 col-xs-12" data-ng-controller="limonAppProductCtrl as products">
+      <div class="col-lg-12 col-sm-12 col-xs-12" >
         <ul class="product_list">
         <!-- begin product item -->
-          <li class="product_price_item" data-ng-class="{{product.product_hot}} && {{product.product_count}} > 0 ? 'hot_product' : ' ' "  data-ng-cloak data-ng-repeat="product in products">
-            <span class="flag_yellow" data-ng-show="prodCount({{product.product_count}})">Заканчивается</span>
-            <span class="flag_red" data-ng-show="prodEmpty({{product.product_count}})">Нет в наличии</span>
+          <li class="product_price_item" data-ng-class="{{product.hot}} && {{product.count}} > 0 ? 'hot_product' : ' ' "  data-ng-cloak data-ng-repeat="product in products">
+            <span class="flag_yellow" data-ng-show="prodCount({{product.count}})">Заканчивается</span>
+            <span class="flag_red" data-ng-show="prodEmpty({{product.count}})">Нет в наличии</span>
             <div class="product_image">
               <a href="#">
-                <img data-ng-src="{{product.product_picture}}" alt="{{product.product_species + ' ' + product.product_name}}">
+                <img data-ng-src="{{product.picture}}" alt="{{product.species + ' ' + product.name}}">
               </a>
             </div>
-            <div class="product_title" ><a href="#">{{ product.product_species + ' ' + product.product_name }}</a></div>
+            <div class="product_title" ><a href="#">{{ product.species + ' ' + product.name }}</a></div>
             <div class="product_price pull-left">
-              <span class="cost">{{ product.product_price }}</span> <span class="currency">грн</span>
+              <span class="cost">{{ product.price }}</span> <span class="currency">грн</span>
             </div>
-            <div class="product_like">
+            <div class="product_like" ng-click="like()">
                 <span class="btn-submit ion-ios-heart-outline"></span>
-                <span class="likes"></span>
+                <span class="likes">{{product.like}}</span>
             </div>
             <div class="clearfix"></div>
             <div class="product_buy">
                 <span class="product_buy_btn-container">
                   <span class="product_buy_sprite btn btn-success">
                   <input type="number" class="product_count" min="1" max="50" data-ng-model="productNum" name="prod_count">
-                    <button class="btn btn-success" data-ng-disabled="product.product_count < 1" data-ng-click="addOrder( product.product_id, product.product_species + ' ' + product.product_name, product.product_price, productNum )">
+                    <button class="btn btn-success" data-ng-disabled="product.count < 1" data-ng-click="addOrder( product.id, product.species + ' ' + product.name, product.price, productNum )">
                     <i class="ion-ios-cart-outline"></i>Купить
                     </button>
                   </span>
@@ -36,7 +36,7 @@
               <span data-ng-if="product.product_hot && product.product_count > 0">горячее предложение</span>
             </div>
             <div class="product_details">
-                <a href="#/products-details/{{product.product_id}}">Подробнее</a>
+                <a href="#/product-details/{{product.id}}">Подробнее</a>
             </div>
           </li>
           <!-- end product item -->

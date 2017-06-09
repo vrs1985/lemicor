@@ -30,7 +30,7 @@
               <li class="nav-tab"><a class="nav-shop ion-bag" href="#/catalog"></a></li>
               <li class="nav-tab"><a class="nav-shipment ion-paper-airplane" href="#/shipment"></a></li>
               <li class="nav-tab"><a class="nav-contact ion-ios-email-outline" href="#/contact"></a></li>
-              <li class="nav-tab"><a class="nav-cart ion-ios-cart-outline" href="#/cart"></a><span class="count-cart">{{ orders.length}}</span></li>
+              <li class="nav-tab"><a class="nav-cart ion-ios-cart-outline" href="#/cart"></a><span class="count-cart" ng-cloak >{{ orders.length}}</span></li>
             </ul>
           </div>
           <!-- END MENU -->
@@ -42,7 +42,9 @@
     </div>
   </div>
   <!-- END HEADER -->
+  <section class="wrapper">
   <ng-view></ng-view>
+  </section>
 
 <!-- BEGIN THANK YOU BLOCK -->
 <section class="footer">

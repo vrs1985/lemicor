@@ -57,44 +57,25 @@
     <div class="container">
         <div class="row">
           <div class="col-lg-offset-1 col-lg-10">
-            <ul class="product-list">
-              <li><!-- Карточка товара -->
+            <ul class="product-list" data-ng-controller="limonAppProductCtrl as products" >
+              <li data-ng-cloak data-ng-repeat="product in products | filter: selectPromo | limitTo:3">
+              <!-- Карточка товара -->
                 <figure class="product">
-                  <p class="product-name">Лимон Мейер</p>
-                  <p class="product-picture"><img src="img/products/lemontree.png" alt=""></p>
-                  <p class="product-price"> 600 <span>грн</span></p>
-                  <button class="btn btn-success" ng-disabled="product.product_count < 1" ng-click="addProd(product.product_id)">
-                    <input type="number" class="product_count" min="1" max="50" value="1" name="prod_count">
-                    <i class="ion-ios-cart-outline"></i>Купить
-                    </button>
+                  <p class="product-name">{{product.species}} {{ product.name }}</p>
+                  <p class="product-picture"><img data-ng-src="{{product.picture}}" alt="{{product.species + ' ' + product.name}}"></p>
+                  <p class="product-price"> {{ product.price }} <span>грн</span></p>
+                  <span class="product_buy_btn-container">
+                    <span class="product_buy_sprite btn btn-success">
+                    <input type="number" class="product_count" min="1" max="50" data-ng-model="productNum" name="prod_count">
+                      <button class="btn btn-success" data-ng-disabled="product.count < 1" data-ng-click="addOrder( product.id, product.species + ' ' + product.name, product.price, productNum )">
+                      <i class="ion-ios-cart-outline"></i>Купить
+                      </button>
+                    </span>
+                  </span>
                 </figure>
                 <!-- Карточка товара -->
                 </li>
-              <li>
-              <!-- Карточка товара -->
-                <figure class="product">
-                  <p class="product-name">Гранат</p>
-                  <p class="product-picture"><img src="img/products/pomegranate.png" alt=""></p>
-                  <p class="product-price"> 250 <span>грн</span></p>
-                    <button class="btn btn-success" ng-disabled="product.product_count < 1" ng-click="addProd(product.product_id)">
-                    <input type="number" class="product_count" min="1" max="50" value="1" name="prod_count">
-                    <i class="ion-ios-cart-outline"></i>Купить
-                    </button>
-                </figure>
-                <!-- Карточка товара -->
-                </li>
-              <li>
-              <!-- Карточка товара -->
-                <figure class="product">
-                  <p class="product-name">Розмарин</p>
-                  <p class="product-picture"><img src="img/products/rosemary.png" alt=""></p>
-                  <p class="product-price"> 150 <span>грн</span></p>
-                  <button class="btn btn-success" ng-disabled="product.product_count < 1" ng-click="addProd(product.product_id)">
-                    <input type="number" class="product_count" min="1" max="50" value="1" name="prod_count">
-                    <i class="ion-ios-cart-outline"></i>Купить
-                    </button>                </figure>
-                <!-- Карточка товара -->
-                </li>
+
             </ul>
           </div>
         </div>

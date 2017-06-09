@@ -1,27 +1,45 @@
 <section class="order">
-<form>
-  <label for="name">
-    Ваше имя:
-    <input type="text" name="name" required="" placeholder="Ваше имя">
-  </label>
-  <label for="email">
-    Email:
-    <input type="email" name="email" required="" placeholder="Ваш Email">
-  </label>
-  <label for="phone">
-    Телефон:
-    <input type="tel" name="phone" required="" placeholder="Ваш телефон">
-  </label>
-  Способ доставки:
-  <input type="radio" name="shipment" value="1" checked=""> Самовывоз (бесплатно)
-  <input type="radio" name="shipment" value="1"> Курьером
-  <input type="radio" name="shipment" value="1"> Новая почта
+<div class="container">
+  <form ng-submit="submit()" novalidate="novalidate">
+    <label for="name">
+      Ваше имя:
+    </label>
+      <input type="text" class="form-control" ng-model="name" name="name" required="" placeholder="Ваше имя">
+    <label for="email">
+      Email:
+    </label>
+      <input type="email" class="form-control" ng-model="email" name="email" required="" placeholder="Ваш Email">
+     <br>
+    <label for="phone">
+      Телефон:
+    </label>
+      <input type="tel" class="form-control" ng-model="phone" name="phone" required="" placeholder="Ваш телефон">
+     <br>
+    <label> Способ доставки: </label><br>
+    <div class="radio">
+    <label>
+      <input type="radio" ng-model="shipment.name" name="shipment" value="Самовывоз" checked="">
+      Самовывоз (бесплатно)</label></div>
+    <div class="radio">
+    <label>
+      <input type="radio" ng-model="shipment.name" name="shipment" value="Курьером">
+      Курьером</label></div>
+    <div class="radio">
+    <label>
+      <input type="radio" ng-model="shipment.name" name="shipment" value="Новая почта">
+      Новая почта</label></div>
+    <label>Адрес доставки:</label>
+    <textarea rows="3" ng-model="address" class="form-control" required="" placeholder="Адрес доставки"></textarea>
+    <br>
+    <label>Сообщение:</label>
+    <textarea rows="3" ng-model="additional" class="form-control" required="" placeholder="Дополнительная информация"></textarea>
+    <br>
+    <input type="submit" class="pull-right btn btn-cart-order" value="Отправить заказ">
+  </form>
+  <div class="thanks">
+    {{ thanks }}
+  </div>
   <br>
-  Адрес доставки:
-  <textarea cols="3" required="" placeholder="Адрес доставки"></textarea>
-  <br>
-  Сообщение:
-  <textarea cols="3" required="" placeholder="Дополнительная информация"></textarea>
-  <button>Отправить заказ</button>
-</form>
+  {{mesage}}
+  </div>
 </section>

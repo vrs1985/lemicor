@@ -5,7 +5,7 @@
   "name" : "Мейера",
   "height" : "20",
   "production" : "Украина",
-  "picture" : "img/products/lemontree.png",
+  "picture" : ["lemontree.png", "lemon1-1.jpg", "lemon1-2.jpg", "lemon1-3.jpg", "lemon1-4.jpg"],
   "price" : "328",
   "count" : "35",
   "hot" : false,

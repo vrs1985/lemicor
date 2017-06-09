@@ -5,7 +5,7 @@
     <tr>
       <th>Номер</th>
       <th>Наименование</th>
-      <th>Цена</th>
+      <th>Цена (шт)</th>
       <th>Количество</th>
       <th>Сумма</th>
       <th>Удалить</th>
@@ -30,6 +30,8 @@
         <strong>Итого: {{ totalCost() }} грн</strong>
       </div>
     </div>
-    <a class="pull-right"><span>Оформить заказ</span></a>
+    <a ng-href="{{hash}}">
+      <span class="pull-right btn btn-cart-order">Оформить заказ</span>
+    </a>
   </div>
 </section>

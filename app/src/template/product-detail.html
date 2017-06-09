@@ -1,16 +1,45 @@
 <section>
-  <h1>  {{ product.species}} {{ product.name}} </h1>
-  <img ng-src="{{product.picture}}" alt="{{ product.name}} ">
-  <div>
-    Высота - {{ product.height }} см
+<div class="container">
+  <div class="row">
+  <!-- slider -->
+    <div class="col-lg-4">
+      <div class="gallery">
+      <img src="{{template()}}" alt="{{ product.name }}">
+              <!-- Controls -->
+      <div>
+          <span class="left carousel-control" >
+            <span class="ion-chevron-left" ng-click="slide('prev')"></span>
+          </span>
+          <span class="right carousel-control" >
+            <span class="ion-chevron-right" ng-click="slide('next')" ></span>
+          </span>
+        </div>
+        {{ number }}
+      </div>
+    </div>
+    <!-- slider -->
+    <!-- description -->
+    <div class="col-lg-8">
+      <h1>  {{ product.species}} {{ product.name}} </h1>
+      <div class="description">
+      <span class="describe-height">
+        <strong>Высота -</strong> {{ product.height }} см
+      </span>
+      <span class="describe-production">
+        <strong>Производство -</strong> {{product.production}}
+      </span>
+      <span class="describe-description">
+        <strong>Описание -</strong> {{ product.description }}
+      </span>
+      <span class="describe-cost">
+        <strong>Стоимость -</strong> {{product.price}} грн
+      </span>
+      </div>
+
+    </div>
+    <!-- description -->
   </div>
-  <div>
-    Производство - {{product.production}}
-  </div>
-  <div>
-    Описание - {{ product.description }}
-  </div>
-  <div>
-    Стоимость - {{product.price}} грн
-  </div>
+</div>
+
+
 </section>

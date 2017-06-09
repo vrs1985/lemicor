@@ -15,8 +15,8 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-offset-4 col-lg-4" ng-controller="sendFormCtrl as send">
-          <form class="form" name="sendMsg" novalidate ng-submit="send(text)">
+        <div class="col-lg-offset-4 col-lg-4" >
+          <form class="form" name="sendMsg" novalidate ng-submit="query(text, sendMsg.$valid)">
             <div class="form-group">
               <label for="">Имя</label>
               <input id="" class="form-control" type="text" ng-model="text.name" name="name" placeholder="Имя:" required >
@@ -35,7 +35,7 @@
             <div class="form-group">
               <textarea class="form-control" rows="5" name="msg" ng-model="text.msg" placeholder="Текст сообщения..." required ></textarea>
             </div>
-            <input class="btn-default pull-right"  type="submit" name="" ng-disabled="sendMsg.$invalid" value="Связаться">
+            <input class="btn btn-default pull-right"  type="submit" name="" ng-disabled="sendMsg.$invalid" value="Связаться">
           </form>
         </div>
       </div>

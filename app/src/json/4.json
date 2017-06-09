@@ -5,7 +5,7 @@
   "name" : "Комнатный",
   "height" : "34",
   "production" : "Украина",
-  "picture" : "img/products/pomegranate.png",
+  "picture" : ["pomegranate.png", "pomergranade1-1.jpg", "pomergranade1-2.jpg", "pomergranade1-3.jpg", "pomergranade1-4.jpg", "pomergranade1-5.jpg", "pomergranade1-6.jpg"],
   "price" : "150",
   "count" : "38",
   "hot" : false
