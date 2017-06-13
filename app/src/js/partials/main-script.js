@@ -52,6 +52,12 @@
         $('body').animate({ scrollTop: val }, 800);
       };
 
+      this.matchClass = (arrClass, identificator)=>{
+        for (var i = 0; i < arrClass.length; i++) {
+          (arrClass[i] === identificator) ? true : false;
+        }
+      };
+
       this.init();
     };
 
@@ -62,12 +68,18 @@
 
       this.init = () => {
         this.default();
+        if (window.innerWidth < 769) {
+          this.ui();
+        }
       };
       // set default parameters
       this.default = () => {
           $('.height').css('height', this.appModel.scr_h + 'px');
       }
       // set default parameters
+      this.ui =()=>{
+        $('.logo-header').attr('src', '/img/icon_large.png').css({'widht': '200px', 'margin-left': '15px'});
+      };
 
       this.init();
     };
@@ -87,10 +99,10 @@
         this.appModel.toogle(x);
       };
       this.click = (e) => {
-        let nav = e.target.className.slice(0, 3);
-        // if(nav == 'nav'){
-        //   this.appModel.smoothScroll(e.target.className);
-        // }
+        let firstClassName = e.target.className.split(' ');
+        if( this.appModel.matchClass(firstClassName, 'nav-menu-mobile') ){ // проверка на совпадения класса
+          this.appModel.smoothScroll(e.target.className);
+        }
         };
 
       this.init();

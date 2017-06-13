@@ -1,27 +1,28 @@
-<section>
+<section data-ng-controller="limonAppProductCtrl as products">
 <div class="container">
   <div class="row">
   <!-- slider -->
     <div class="col-lg-4">
-      <div class="gallery">
+    <div class="gallery">
+      <div class="gallery-img">
       <img src="{{template()}}" alt="{{ product.name }}">
               <!-- Controls -->
-      <div>
-          <span class="left carousel-control" >
+      </div>
+      <div class="gallery-control">
+          <span class="left pull-left" >
             <span class="ion-chevron-left" ng-click="slide('prev')"></span>
           </span>
-          <span class="right carousel-control" >
+          <span class="right pull-right" >
             <span class="ion-chevron-right" ng-click="slide('next')" ></span>
           </span>
-        </div>
-        {{ number }}
       </div>
+    </div>
     </div>
     <!-- slider -->
     <!-- description -->
     <div class="col-lg-8">
+      <div class="describe">
       <h1>  {{ product.species}} {{ product.name}} </h1>
-      <div class="description">
       <span class="describe-height">
         <strong>Высота -</strong> {{ product.height }} см
       </span>
@@ -35,7 +36,14 @@
         <strong>Стоимость -</strong> {{product.price}} грн
       </span>
       </div>
-
+      <span class="product_buy_btn-container">
+        <span class="product_buy_sprite btn btn-success">
+        <input type="number" class="product_count" min="1" max="50" data-ng-model="productNum" name="prod_count">
+          <button class="btn btn-success" data-ng-disabled="product.count < 1" data-ng-click="addOrder( product.id, product.species + ' ' + product.name, product.price, productNum )">
+          <i class="ion-ios-cart-outline"></i>Купить
+          </button>
+        </span>
+      </span>
     </div>
     <!-- description -->
   </div>

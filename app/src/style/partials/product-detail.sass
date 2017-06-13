@@ -1,3 +1,32 @@
-.gallery > img
-  max-width: 300px
-  max-height: 450px
+.gallery
+  margin:  15px
+  position: relative
+  &-img
+    margin: auto
+    width: 250px
+    height: 400px
+    img
+      width: 100%
+      max-height: 100%
+  &-control
+    display: block
+    width: 100%
+    position: absolute
+    top: calc(50% - 30px)
+    .left, .right
+      font-size: 60px
+      font-weight: 800
+      opacity: 0.2
+      cursor: pointer
+.describe
+  font-size:  $font-size-large
+  color: $gray-dark
+  padding: $padding-large-horizontal
+  -webkit-box-sizing: border-box
+   -moz-box-sizing: border-box
+   box-sizing: border-box
+  span
+    display: block
+    margin: 0.5em
+  &-description
+    text-align: justify

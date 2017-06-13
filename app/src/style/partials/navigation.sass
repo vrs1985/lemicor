@@ -1,0 +1,60 @@
+.nav-menu
+  list-style-type: none
+  margin: 0
+  padding: 0
+.nav-tab
+  float: left
+  margin: auto 10px
+  cursor: pointer
+  a
+    font-size: 45px
+    color: $body-bg
+    opacity: 0.3
+    text-decoration: all 0.5s
+    -webkit-transition: all 0.5s
+    -moz-transition: all 0.5s
+    -ms-transition: all 0.5s
+    -o-transition: all 0.5s
+    transition: all 0.5s
+    &:hover
+      color: $brand-success
+      opacity: 1
+.nav-arrow
+  font-size: 60px
+  margin: 50px 0 0
+  padding: 0
+  display: block
+  position: relative
+  width: 50px
+  height: 50px
+  left: calc(50% - 25px)
+  -webkit-border-radius: 50%
+  border-radius: 50%
+  border: 3px solid $body-bg
+  color:  $body-bg
+  text-align: center
+  line-height: 0.5em
+  cursor: pointer
+.nav-menu-mobile
+  font-size: 45px
+  color: $body-bg
+  opacity: 0.7
+  text-align: center
+  text-decoration: all 0.5s
+  -webkit-transition: all 0.5s
+  -moz-transition: all 0.5s
+  -ms-transition: all 0.5s
+  -o-transition: all 0.5s
+  transition: all 0.5s
+  &:hover
+    color: $brand-success
+    opacity: 1
+  display: none
+  color: $body-bg
+@media (max-width: $screen-xs-max)
+  .nav-tab
+    display: none
+    clear: both
+    color: $gray-dark
+  .nav-menu-mobile
+    display: block

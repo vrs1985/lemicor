@@ -9,15 +9,17 @@
 /*
  * Custom
  */
- //= partials/controllers/controller.js
+ //= partials/firebase.js
+ //= partials/controllers/app.js
  //= partials/controllers/contactCtrl.js
  //= partials/controllers/catalogCtrl.js
  //= partials/controllers/orderCtrl.js
  //= partials/controllers/cartCtrl.js
  //= partials/controllers/productDetailCtrl.js
  //= partials/controllers/homeCtrl.js
+ //= partials/controllers/loginCtrl.js
  //= partials/controllers/shipmentCtrl.js
  //= partials/directives.js
  //= partials/filters.js
 //= partials/main-script.js
-
+ //= partials/auth.js

@@ -7,10 +7,13 @@
   <meta content="author" name="">
   <link rel="icon" href="favicon.png" type="image/png">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <link rel="stylesheet" href="" >
   <link rel="stylesheet" href="css/main.css">
   <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-database.js"></script>
   <script src="js/main.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.js"></script>
 
@@ -19,12 +22,13 @@
   <div class="header">
     <div class="content">
       <div class="row">
-        <div class="col-lg-8">
+        <div class="col-lg-8 col-sm-3 col-xs-3">
           <img class="logo-header" src="/img/logo.png" alt="Limonarium.Corp">
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-sm-8 col-xs-8">
         <!-- BEGIN MENU -->
           <div class="nav-line pull-right">
+            <span class="nav-menu-mobile ion-navicon-round" ></span>
             <ul class="nav-menu">
               <li class="nav-tab"><a class="nav-home ion-ios-home-outline" href="#/"></a></li>
               <li class="nav-tab"><a class="nav-shop ion-bag" href="#/catalog"></a></li>
@@ -35,9 +39,9 @@
           </div>
           <!-- END MENU -->
         </div>
-        <div class="col-lg-1">
+<!--         <div class="col-lg-1">
           <div class="login ion-ios-contact"></div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

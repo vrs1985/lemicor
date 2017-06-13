@@ -4,6 +4,7 @@ var limonApp = angular.module('limonarium', ['ngRoute']);
 limonApp.config(['$routeProvider', '$locationProvider',
  function ($routeProvider, $locationProvider) {
   $locationProvider.hashPrefix('');
+
   $routeProvider
       .when('/',{
         templateUrl: 'template/home.html',
@@ -25,6 +26,10 @@ limonApp.config(['$routeProvider', '$locationProvider',
         templateUrl: 'template/cart.html',
         controller: 'limonAppCartCtrl'
       })
+      .when('/admin',{
+        templateUrl: 'template/login.html',
+        controller: 'limonAppLoginCtrl'
+      })
       .when('/product-details/:id',{
         templateUrl: 'template/product-detail.html',
         controller: 'limonAppProductDetailCtrl'
@@ -37,6 +42,7 @@ limonApp.config(['$routeProvider', '$locationProvider',
         redirectTo: '/'
       });
   }
+
 ]);
 
 limonApp.factory('$localstorage', ['$window', function($window) {
@@ -56,7 +62,9 @@ limonApp.factory('$localstorage', ['$window', function($window) {
   }
 }]);
 
-limonApp.run(function($rootScope, $localstorage) {
+limonApp.run(function($rootScope, $localstorage, $browser) {
+    $browser.baseHref = function () { return "/" };
     var order = $localstorage.getObject('order');
     $rootScope.orders = order;
 });
+

@@ -9,15 +9,14 @@
             <span class="flag_yellow" data-ng-show="prodCount({{product.count}})">Заканчивается</span>
             <span class="flag_red" data-ng-show="prodEmpty({{product.count}})">Нет в наличии</span>
             <div class="product_image">
-              <a href="#">
+              <a href="#/product-details/{{product.id}}">
                 <img data-ng-src="{{product.picture}}" alt="{{product.species + ' ' + product.name}}">
-              </a>
             </div>
-            <div class="product_title" ><a href="#">{{ product.species + ' ' + product.name }}</a></div>
+            <div class="product_title" >{{ product.species + ' ' + product.name }}</a></div>
             <div class="product_price pull-left">
               <span class="cost">{{ product.price }}</span> <span class="currency">грн</span>
             </div>
-            <div class="product_like" ng-click="like()">
+            <div class="product_like" ng-click="like()" style="display:none">
                 <span class="btn-submit ion-ios-heart-outline"></span>
                 <span class="likes">{{product.like}}</span>
             </div>
@@ -36,7 +35,7 @@
               <span data-ng-if="product.product_hot && product.product_count > 0">горячее предложение</span>
             </div>
             <div class="product_details">
-                <a href="#/product-details/{{product.id}}">Подробнее</a>
+                <a href="/product-details/{{product.id}}">Подробнее</a>
             </div>
           </li>
           <!-- end product item -->
