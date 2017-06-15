@@ -1,14 +1,22 @@
-<section class="cart "  ng-controller="limonAppCartCtrl as cart">
+<section class="cart " >
 <div class="container">
 <table class="table table-striped">
   <thead>
-    <tr>
+    <tr class="desctop-table-th">
       <th>Номер</th>
       <th>Наименование</th>
-      <th>Цена (шт)</th>
-      <th>Количество</th>
+      <th>Цена (грн)</th>
+      <th>Количество (шт)</th>
       <th>Сумма</th>
       <th>Удалить</th>
+    </tr>
+    <tr class="mobile-table-th bordered">
+      <th>№</th>
+      <th>Наименование</th>
+      <th>Цена</th>
+      <th>шт</th>
+      <th>Сумма</th>
+      <th>Удал</th>
     </tr>
   </thead>
   <tbody>
@@ -26,11 +34,11 @@
 
 
     <div class="row">
-      <div class="col-lg-offset-10 col-lg-2">
+      <div class="col-lg-offset-10 col-lg-2 col-sm-12 col-xs-12 cart-total-cost">
         <strong>Итого: {{ totalCost() }} грн</strong>
       </div>
     </div>
-    <a ng-href="{{hash}}">
+    <a ui-sref="{{hash}}" href="">
       <span class="pull-right btn btn-cart-order">Оформить заказ</span>
     </a>
   </div>

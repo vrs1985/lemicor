@@ -29,7 +29,7 @@ body
   .logo-header
     visibility: visible
 .logo-header
-  visibility: hidden
+  /*visibility: hidden*/
   height: 50px
 .count-cart
   font-size: 16px
@@ -48,13 +48,19 @@ body
   cursor: pointer
   visibility: hidden
 .home
+  display: block
+  height: calc(100vh - 50px)
   width: 100vw
+  background-color: $gray-base
 .advert
   display: none
+.shop
+  display: block
+  padding: 25px 0px
 .dot
   position: absolute
   width: 100%
-  height: 100%
+  height: calc(100vh - 50px)
   background: url('../img/overlay.png')
 .level-up
   display: block
@@ -65,17 +71,18 @@ body
   margin-top: 30%
 .main-logo
   img
-    height: 100px
+    max-width: 100%
+    max-height: 100px
 .slogan
   font-family: 'Comfortaa', cursive
   font-weight: 800
   font-size:  floor(($font-size-base * 6))
   color: $brand-yellow
 .video
-  max-height: 100%
+  max-height: calc(100vh - 50px)
   overflow: hidden
 video
-  height: 100%
+  height: auto
   width: 100%
 .advert
   // height: 1px
@@ -121,19 +128,30 @@ video
   color: $gray-lighter
   text-shadow: 1px 1px 2px $gray-light
 // product
-.product-list
-  list-style-type: none
-  margin: 0
-  padding: 0
-  li
-    display: inline-flex
-    width: 33%
-    -webkit-box-sizing: border-box
-    -moz-box-sizing: border-box
-    box-sizing: border-box
-    &:nth-child(-n+2)
-      border-right: 4px solid
-      border-color:  $gray-lighter
+.promo
+  &-list
+    list-style-type: none
+    margin: 0
+    padding: 0
+    @media (max-width: $screen-xs-max)
+      display: flex
+      -webkit-flex-direction: column
+      -ms-flex-direction: column
+      flex-direction: column
+    &-item
+      display: inline-flex
+      width: 33%
+      -webkit-box-sizing: border-box
+      -moz-box-sizing: border-box
+      box-sizing: border-box
+      @media (max-width: $screen-xs-max)
+        margin: auto
+        width: 90%
+      &:nth-child(-n+2)
+        border-right: 4px solid
+        border-color:  $gray-lighter
+        @media (max-width: $screen-xs-max)
+          border: none
 .product
   width: 100% !important
   text-align: center
@@ -147,6 +165,9 @@ video
     margin-bottom: 0
     height: 2em
     color: $brand-success
+    em
+      font-size:  $font-size-h4
+      font-weight: 600
   &-picture
     font-size:  $font-size-h3
     display: inline-block
@@ -308,4 +329,31 @@ video
         color: rgb(102, 153, 204)
 .catalog
   margin-top: 80px
+@media (max-width: $screen-xs-max)
+  .social
+    text-align: right
+  .reserved
+    display: none
+  .head-section
+    font-size: 3em
+    line-height: 1em
+    display: block
+    margin: auto
+    text-align: center
+  .shipment, .contact
+    height: auto !important
+    padding: 10px
+  .slogan
+    font-size: 60px
+    margin: 20px auto
+    display: block
+    text-align: center
+  .video
+    display: none
+  .dot
+    display: none
+  .main-logo
+    img
+      display: block
+      margin: 15px auto
 

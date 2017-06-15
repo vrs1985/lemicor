@@ -9,10 +9,10 @@
             <span class="flag_yellow" data-ng-show="prodCount({{product.count}})">Заканчивается</span>
             <span class="flag_red" data-ng-show="prodEmpty({{product.count}})">Нет в наличии</span>
             <div class="product_image">
-              <a href="#/product-details/{{product.id}}">
+              <a ui-sref="details({ productId: product.id })" href="" >
                 <img data-ng-src="{{product.picture}}" alt="{{product.species + ' ' + product.name}}">
             </div>
-            <div class="product_title" >{{ product.species + ' ' + product.name }}</a></div>
+            <div class="product_title" >{{ product.species + ' ' + product.name + ' ' + product.height }}см </a></div>
             <div class="product_price pull-left">
               <span class="cost">{{ product.price }}</span> <span class="currency">грн</span>
             </div>
@@ -32,10 +32,10 @@
                 </span>
             </div>
             <div class="hot_price">
-              <span data-ng-if="product.product_hot && product.product_count > 0">горячее предложение</span>
+              <span data-ng-if="product.hot && product.count > 0">горячее предложение</span>
             </div>
             <div class="product_details">
-                <a href="/product-details/{{product.id}}">Подробнее</a>
+                <a ui-sref="details({ productId: product.id })" href="">Подробнее</a>
             </div>
           </li>
           <!-- end product item -->

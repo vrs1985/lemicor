@@ -1,6 +1,6 @@
 <section class="home height">
-    <div class="dot height"></div>
-    <div class="video">
+    <div ng-if="viewport()" class="dot height"></div>
+    <div ng-if="viewport()" class="video">
       <video  autoplay loop="loop" poster="/img/main-picture.jpg">
         <source src="Plant Time Lapse.mp4" type="" >
       </video>
@@ -8,14 +8,14 @@
     <div class="level-up">
       <div class="container">
         <div class="row">
-          <div class="col-lg12">
+          <div class="col-lg12 col-sm-12 col-xs-12">
             <div class="main-logo">
               <img src="img/logo.png">
             </div>
           </div>
         </div>
         <div class="row">
-          <div class="col-lg12">
+          <div class="col-lg12 col-sm-12 col-xs-12">
             <span class="slogan">
               Яркие моменты жизни
             </span>
@@ -57,12 +57,16 @@
     <div class="container">
         <div class="row">
           <div class="col-lg-offset-1 col-lg-10">
-            <ul class="product-list" data-ng-controller="limonAppProductCtrl as products" >
-              <li data-ng-cloak data-ng-repeat="product in products | filter: selectPromo | limitTo:3">
+            <ul class="promo-list" data-ng-controller="ProductCtrl as products" >
+              <li class="promo-list-item" data-ng-cloak data-ng-repeat="product in promoItems(products) | limitTo : 3">
               <!-- Карточка товара -->
                 <figure class="product">
-                  <p class="product-name">{{product.species}} {{ product.name }}</p>
-                  <p class="product-picture"><img data-ng-src="{{product.picture}}" alt="{{product.species + ' ' + product.name}}"></p>
+                  <a class="product-link" ui-sref="details({ productId: product.id })" href="">
+                    <p class="product-name">{{product.species}} {{ product.name }} <em>{{ product.height }}см</em></p>
+                    <p class="product-picture">
+                      <img data-ng-src="{{product.picture}}" alt="{{product.species + ' ' + product.name}}">
+                    </p>
+                  </a>
                   <p class="product-price"> {{ product.price }} <span>грн</span></p>
                   <span class="product_buy_btn-container">
                     <span class="product_buy_sprite btn btn-success">
@@ -81,7 +85,7 @@
         </div>
         <div class="row">
           <div class="col-lg-offset-10 col-lg-2">
-            <span class="to-shop pull-right"> <a href="#/catalog">к каталогу</a>  <span class="ion-android-arrow-forward"></span></span>
+            <span class="to-shop pull-right"> <a ui-sref="catalog" href="">к каталогу</a>  <span class="ion-android-arrow-forward"></span></span>
             <span class="to-shop-underline"></span>
           </div>
         </div>

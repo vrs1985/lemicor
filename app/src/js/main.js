@@ -9,17 +9,16 @@
 /*
  * Custom
  */
- //= partials/firebase.js
+ /*//= partials/firebase.js*/
  //= partials/controllers/app.js
- //= partials/controllers/contactCtrl.js
- //= partials/controllers/catalogCtrl.js
- //= partials/controllers/orderCtrl.js
- //= partials/controllers/cartCtrl.js
- //= partials/controllers/productDetailCtrl.js
- //= partials/controllers/homeCtrl.js
- //= partials/controllers/loginCtrl.js
- //= partials/controllers/shipmentCtrl.js
- //= partials/directives.js
+ //= partials/controllers/contact.js
+ //= partials/controllers/catalog.js
+ //= partials/controllers/order.js
+ //= partials/controllers/cart.js
+ //= partials/controllers/productDetail.js
+ //= partials/controllers/home.js
+ //= partials/controllers/login.js
+ //= partials/controllers/shipment.js
  //= partials/filters.js
 //= partials/main-script.js
- //= partials/auth.js
+/* //= partials/auth.js*/

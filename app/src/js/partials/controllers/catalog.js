@@ -1,7 +1,11 @@
-limonApp.controller('limonAppProductCtrl',
-  ['$scope', '$http', '$location', '$localstorage', '$rootScope',
-  function ($scope, $http, $location, $localstorage, $rootScope ) {
-      $http.get("../json/product.json")
+angular.module('limonarium.catalog', ['ui.router', 'limonarium'])
+.config(confCatalog)
+.controller('ProductCtrl', ProductCtrl);
+
+ProductCtrl.$inject = ['$scope', '$http', '$location', '$localstorage', '$rootScope'];
+
+function ProductCtrl($scope, $http, $location, $localstorage, $rootScope) {
+  $http.get("../json/product.json")
       .then(function (response) {$scope.products = response.data.records;});
 
       $scope.prodCount = function (e) {
@@ -33,5 +37,13 @@ limonApp.controller('limonAppProductCtrl',
       };
 
       $scope.productNum = 1;
-  }
-]);
+}
+
+function confCatalog($stateProvider, $urlRouterProvider) {
+      $stateProvider
+      .state('catalog',{
+        url: '/catalog',
+        templateUrl: 'template/catalog.html',
+        controller: 'ProductCtrl'
+      });
+}

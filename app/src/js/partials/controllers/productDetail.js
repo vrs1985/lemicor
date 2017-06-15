@@ -1,10 +1,14 @@
-limonApp.controller('limonAppProductDetailCtrl',
-  ['$scope', '$http', '$location', '$routeParams',
-  function ($scope, $http, $location, $routeParams) {
-    var that = this;
+angular.module('limonarium.detail', ['ui.router', 'limonarium'])
+.config(confDetail)
+.controller('DetailCtrl', DetailCtrl);
+
+DetailCtrl.$inject = ['$scope', '$http', '$location', '$stateParams'];
+
+function DetailCtrl($scope, $http, $location, $stateParams) {
+  var that = this;
     that.picture = [];
-    $scope.id = $routeParams.id;
-    var url = '../json/' + $routeParams.id + '.json';
+    $scope.article = $stateParams.productId;
+    var url = '../json/' + $scope.article + '.json';
 
     $http.get(url).then(function(response) {
       $scope.product = response.data;
@@ -28,6 +32,13 @@ limonApp.controller('limonAppProductDetailCtrl',
      console.log($scope.number);
     }
   };
+}
 
-  }
-]);
+function confDetail($stateProvider, $urlRouterProvider) {
+      $stateProvider
+      .state('details', {
+        url: '/product/code/:productId',
+        templateUrl: 'template/product.detail.html',
+        controller: 'DetailCtrl'
+      });
+}

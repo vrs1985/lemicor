@@ -166,7 +166,7 @@
   "count" : "7",
   "hot" : "true",
   "like": 0,
-  "promo" : false
+  "promo" : true
 },
 {
   "id" : 13,

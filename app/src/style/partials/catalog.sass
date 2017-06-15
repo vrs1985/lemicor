@@ -1,5 +1,10 @@
 .product
   display: inline-block
+  &-link
+    text-decoration: none
+    outline: none !important
+  &_list
+    padding: 0
   &_count
     width: 45px
     color: $gray-dark
@@ -49,4 +54,16 @@
     background-color: lighten($brand-warning, 20%)
   &_hot
     background-color: $brand-danger !important
+@media (max-width: $screen-xs-max)
+  .product
+    &_price_item
+      width: 90%
+      height: auto
+    &_title
+      font-size: 18px
+      height: auto
+      margin: 20px auto 0px
+      text-align: center
+    &_buy
+      margin: auto
 

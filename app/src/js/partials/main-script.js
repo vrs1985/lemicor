@@ -49,12 +49,12 @@
       };
 
       this.scrollTo = val => {
-        $('body').animate({ scrollTop: val }, 800);
+        $('body').animate({ scrollTop: val - 50 }, 800);
       };
 
       this.matchClass = (arrClass, identificator)=>{
         for (var i = 0; i < arrClass.length; i++) {
-          (arrClass[i] === identificator) ? true : false;
+          if (arrClass[i] === identificator){ return true; }
         }
       };
 
@@ -74,11 +74,15 @@
       };
       // set default parameters
       this.default = () => {
-          $('.height').css('height', this.appModel.scr_h + 'px');
+          // $('.height').css('height', this.appModel.scr_h + 'px');
       }
       // set default parameters
       this.ui =()=>{
         $('.logo-header').attr('src', '/img/icon_large.png').css({'widht': '200px', 'margin-left': '15px'});
+      };
+
+      this.enableMenu = ()=>{
+        $('.nav-tab').toggle('slow');
       };
 
       this.init();
@@ -101,7 +105,10 @@
       this.click = (e) => {
         let firstClassName = e.target.className.split(' ');
         if( this.appModel.matchClass(firstClassName, 'nav-menu-mobile') ){ // проверка на совпадения класса
-          this.appModel.smoothScroll(e.target.className);
+          this.appView.enableMenu();
+        }
+        if( this.appModel.matchClass(firstClassName, 'nav-arrow') ){ // проверка на совпадения класса
+          this.appModel.scrollTo(this.appModel.scr_h);
         }
         };
 

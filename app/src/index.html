@@ -2,6 +2,7 @@
 <html lang="en" ng-app="limonarium">
 <head>
   <meta charset="UTF-8">
+  <base href="/">
   <title>Limonarium</title>
     <meta name="description">
   <meta content="author" name="">
@@ -10,19 +11,19 @@
   <link rel="stylesheet" href="css/main.css">
   <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-  <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-database.js"></script>
   <script src="js/main.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
 
 </head>
-<body ng-controller="limonAppCtrl">
+<body ng-controller="HomeCtrl">
   <div class="header">
     <div class="content">
       <div class="row">
-        <div class="col-lg-8 col-sm-3 col-xs-3">
+        <div class="col-lg-8 col-sm-4 col-xs-4">
           <img class="logo-header" src="/img/logo.png" alt="Limonarium.Corp">
         </div>
         <div class="col-lg-3 col-sm-8 col-xs-8">
@@ -30,11 +31,11 @@
           <div class="nav-line pull-right">
             <span class="nav-menu-mobile ion-navicon-round" ></span>
             <ul class="nav-menu">
-              <li class="nav-tab"><a class="nav-home ion-ios-home-outline" href="#/"></a></li>
-              <li class="nav-tab"><a class="nav-shop ion-bag" href="#/catalog"></a></li>
-              <li class="nav-tab"><a class="nav-shipment ion-paper-airplane" href="#/shipment"></a></li>
-              <li class="nav-tab"><a class="nav-contact ion-ios-email-outline" href="#/contact"></a></li>
-              <li class="nav-tab"><a class="nav-cart ion-ios-cart-outline" href="#/cart"></a><span class="count-cart" ng-cloak >{{ orders.length}}</span></li>
+              <li class="nav-tab"><a class="nav-home ion-ios-home-outline" ui-sref="home" href=""></a></li>
+              <li class="nav-tab"><a class="nav-shop ion-bag" ui-sref="catalog" href=""></a></li>
+              <li class="nav-tab"><a class="nav-shipment ion-paper-airplane" ui-sref="shipment" href=""></a></li>
+              <li class="nav-tab"><a class="nav-contact ion-ios-email-outline" ui-sref="contact" href=""></a></li>
+              <li class="nav-tab"><a class="nav-cart ion-ios-cart-outline" ui-sref="cart" href=""></a><span class="count-cart" ng-cloak >{{ orders.length}}</span></li>
             </ul>
           </div>
           <!-- END MENU -->
@@ -47,18 +48,17 @@
   </div>
   <!-- END HEADER -->
   <section class="wrapper">
-  <ng-view></ng-view>
+  <ui-view></ui-view>
   </section>
 
 <!-- BEGIN THANK YOU BLOCK -->
 <section class="footer">
   <div class="row">
-    <div class="col-lg-3">
+    <div class="col-lg-3 col-sm-6 col-xs-7">
         <img class="footer-logo" src="img/logo.png" alt="Limonarium.Corp">
         <span class="reserved pull-right">All rights reserved&copy;</span>
     </div>
-    <div class="col-lg-8"></div>
-    <div class="col-lg-2 pull-right">
+    <div class="col-lg-offset-7 col-lg-2 col-sm-6 col-xs-5 pull-right">
     <ul class="social">
       <li class="social_network">
         <a class="ion-social-facebook-outline" ></a>

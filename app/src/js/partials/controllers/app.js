@@ -1,49 +1,22 @@
 'use strict'
-var limonApp = angular.module('limonarium', ['ngRoute']);
+var limonApp = angular.module('limonarium', [
+  'ui.router',
+  'limonarium.cart',
+  'limonarium.contact',
+  'limonarium.catalog',
+  'limonarium.home',
+  'limonarium.login',
+  'limonarium.shipment',
+  'limonarium.order',
+  'limonarium.detail'
+  ])
+.config(confApp)
+.controller('AppCtrl', AppCtrl);
 
-limonApp.config(['$routeProvider', '$locationProvider',
- function ($routeProvider, $locationProvider) {
-  $locationProvider.hashPrefix('');
-
-  $routeProvider
-      .when('/',{
-        templateUrl: 'template/home.html',
-        controller: 'limonAppCtrl'
-      })
-      .when('/catalog',{
-        templateUrl: 'template/catalog.html',
-        controller: 'limonAppProductCtrl'
-      })
-      .when('/shipment',{
-        templateUrl: 'template/shipment.html',
-        controller: 'limonAppShipmentCtrl'
-      })
-      .when('/contact',{
-        templateUrl: 'template/contact.html',
-        controller: 'limonAppContactCtrl'
-      })
-      .when('/cart',{
-        templateUrl: 'template/cart.html',
-        controller: 'limonAppCartCtrl'
-      })
-      .when('/admin',{
-        templateUrl: 'template/login.html',
-        controller: 'limonAppLoginCtrl'
-      })
-      .when('/product-details/:id',{
-        templateUrl: 'template/product-detail.html',
-        controller: 'limonAppProductDetailCtrl'
-      })
-      .when('/order',{
-        templateUrl: 'template/order.html',
-        controller: 'limonAppOrderCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  }
-
-]);
+function confApp($stateProvider, $urlRouterProvider, $locationProvider) {
+  // $locationProvider.html5Mode(true);
+  $urlRouterProvider.otherwise( '/' );
+}
 
 limonApp.factory('$localstorage', ['$window', function($window) {
   return {
@@ -63,8 +36,12 @@ limonApp.factory('$localstorage', ['$window', function($window) {
 }]);
 
 limonApp.run(function($rootScope, $localstorage, $browser) {
-    $browser.baseHref = function () { return "/" };
     var order = $localstorage.getObject('order');
     $rootScope.orders = order;
 });
 
+AppCtrl.$inject = ['$scope'];
+
+function AppCtrl($scope) {
+
+}

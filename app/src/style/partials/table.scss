@@ -18,7 +18,10 @@ th {
 
 
 // Baseline styles
-
+.bordered > th{
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
 .table {
   width: 100%;
   max-width: 100%;
@@ -34,6 +37,10 @@ th {
         line-height: $line-height-base;
         vertical-align: top;
         border-top: 1px solid $table-border-color;
+        @media (max-width: $screen-xs-max){
+          padding:  $table-cell-padding 0;
+          text-align: center;
+        }
       }
     }
   }
@@ -167,6 +174,20 @@ table {
 // Wrap your tables in `.table-responsive` and we'll make them mobile friendly
 // by enabling horizontal scrolling. Only applies <768px. Everything above that
 // will display normally.
+
+.desctop-table-th{
+  display: table-row;
+  @media screen and (max-width: $screen-xs-max) {
+    display: none;
+  }
+}
+
+.mobile-table-th{
+  display: none;
+  @media screen and (max-width: $screen-xs-max) {
+    display: table-row;
+  }
+}
 
 .table-responsive {
   overflow-x: auto;

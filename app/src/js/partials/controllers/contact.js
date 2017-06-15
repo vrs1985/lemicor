@@ -1,8 +1,11 @@
-limonApp.controller('limonAppContactCtrl',
-  ['$scope', '$http', '$location',
-  function ($scope, $http, $location) {
+angular.module('limonarium.contact', ['ui.router'])
+.config(confContact)
+.controller('ContactCtrl', ContactCtrl);
 
-    $scope.query = function (txt, isValid) {
+ContactCtrl.$inject = ['$scope'];
+
+function ContactCtrl($scope) {
+  $scope.query = function (txt, isValid) {
       if(isValid){
         if(angular.isDefined(txt) &&
         angular.isDefined(txt.name)&&
@@ -25,6 +28,13 @@ limonApp.controller('limonAppContactCtrl',
         }
       }
     };
+}
 
-  }
-]);
+function confContact($stateProvider, $urlRouterProvider) {
+      $stateProvider
+      .state( 'contact' ,{
+        url: '/contact',
+        templateUrl: 'template/contact.html',
+        controller: 'ContactCtrl'
+      });
+}
