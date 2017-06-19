@@ -2,9 +2,9 @@ angular.module('limonarium.order',  ['ui.router', 'limonarium'])
 .config(confOrder)
 .controller('OrderCtrl', OrderCtrl);
 
-OrderCtrl.$inject = ['$scope', '$http', '$location', '$rootScope'];
+OrderCtrl.$inject = ['$scope', '$http', '$location', '$rootScope', '$localstorage'];
 
-function OrderCtrl($scope, $http, $location, $rootScope) {
+function OrderCtrl($scope, $http, $location, $rootScope, $localstorage) {
     $scope.order = $rootScope.orders;
     $scope.shipment = {
       name: 'Самовывоз'
@@ -38,6 +38,8 @@ function OrderCtrl($scope, $http, $location, $rootScope) {
         $scope.phone = '';
         $scope.address = '';
         $scope.additional= '';
+        $rootScope.orders = [];
+        $localstorage.setObject('order', []);
       }
     }
 }

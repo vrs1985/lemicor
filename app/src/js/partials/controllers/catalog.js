@@ -17,6 +17,16 @@ function ProductCtrl($scope, $http, $location, $localstorage, $rootScope) {
         return style;
       };
 
+      $scope.sortBy = '';
+
+      $scope.sort = function (arg) {
+        if (arg === 'price') {
+          ($scope.sortBy !== 'price')? $scope.sortBy = 'price' : $scope.sortBy = '';
+        }else if(arg === 'available'){
+          ($scope.sortBy !== '-count')?$scope.sortBy = '-count' : $scope.sortBy = '';
+        }
+      };
+
       $scope.like = function () {
         console.log('like + 1');
       };

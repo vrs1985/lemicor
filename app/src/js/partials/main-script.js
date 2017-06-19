@@ -49,7 +49,7 @@
       };
 
       this.scrollTo = val => {
-        $('body').animate({ scrollTop: val - 50 }, 800);
+        $('body').animate({ scrollTop: val }, 800);
       };
 
       this.matchClass = (arrClass, identificator)=>{

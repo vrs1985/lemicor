@@ -1,11 +1,22 @@
 
-<sections class="product">
+<section class="product">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 col-sm-12 col-xs-12" >
+        <div class="row">
+          <div class="col-lg-4 col-xs-12 col-sm-6">
+            <div class="form-group">
+              <input type="text" class="product-search form-control" ng-model='productSearch' name="" placeholder="Поиск">
+            </div>
+          </div>
+          <div class="col-lg-offset-4 col-lg-4 col-sm-6 col-xs-12">
+            <i class=" product-sort ion-android-arrow-dropup" ng-click="sort('price')">по цене</i>&nbsp;
+            <i class=" product-sort ion-android-checkbox-outline" ng-click="sort('available')">по наличию</i>
+          </div>
+        </div>
         <ul class="product_list">
         <!-- begin product item -->
-          <li class="product_price_item" data-ng-class="{{product.hot}} && {{product.count}} > 0 ? 'hot_product' : ' ' "  data-ng-cloak data-ng-repeat="product in products">
+          <li class="product_price_item" data-ng-class="{{product.hot}} && {{product.count}} > 0 ? 'hot_product' : ' ' "  data-ng-cloak data-ng-repeat="product in products | filter: productSearch | orderBy: sortBy">
             <span class="flag_yellow" data-ng-show="prodCount({{product.count}})">Заканчивается</span>
             <span class="flag_red" data-ng-show="prodEmpty({{product.count}})">Нет в наличии</span>
             <div class="product_image">
@@ -43,4 +54,4 @@
       </div>
     </div>
   </div>
-</sections>
+</section>

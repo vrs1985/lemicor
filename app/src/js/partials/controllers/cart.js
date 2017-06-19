@@ -10,6 +10,12 @@ function CartCtrl($scope, $localstorage, $rootScope) {
       $rootScope.orders.splice(index, 1);
       $localstorage.setObject('order', $rootScope.orders);
     };
+
+    $scope.viewport = function () {
+      var screen = (document.body.clientWidth < 768) ? false : true;
+      return screen;
+    };
+
     $scope.totalCost = function () {
       var count = $rootScope.orders.length;
       var total = 0;

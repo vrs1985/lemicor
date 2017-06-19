@@ -57,6 +57,10 @@ body
 .shop
   display: block
   padding: 25px 0px
+section
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
 .dot
   position: absolute
   width: 100%
@@ -117,9 +121,10 @@ video
       max-width: 600px
 .shipment
   font-size: $font-size-large
+  padding: 25px
   line-height: 1.5
 .wrapper
-  min-height: calc(100vh - 120px)
+  min-height: calc(100vh - 50px)
   padding-top: 70px
 .head-section
   font-family: $font-family-sans-serif
@@ -153,6 +158,8 @@ video
         @media (max-width: $screen-xs-max)
           border: none
 .product
+  margin: auto
+  padding: 25px
   width: 100% !important
   text-align: center
   &:hover
@@ -241,6 +248,7 @@ video
     background-color: $brand-success
     left: 50px
 .contact
+  padding:  25px
   background: url('../img/bg-contact.png'), url('../img/3ring.png')no-repeat 150% -60%
 // form
 .form
@@ -290,7 +298,8 @@ video
   padding:  5px
   background-color: $gray
   color: $gray-light
-  height: 40px
+  min-height: 40px
+  height: auto
   &-logo
     margin-top: $padding-base-horizontal
     margin-left: ($padding-small-horizontal * 3)

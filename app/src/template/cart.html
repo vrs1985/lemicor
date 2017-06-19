@@ -2,7 +2,7 @@
 <div class="container">
 <table class="table table-striped">
   <thead>
-    <tr class="desctop-table-th">
+    <tr ng-if="viewport()">
       <th>Номер</th>
       <th>Наименование</th>
       <th>Цена (грн)</th>
@@ -10,7 +10,7 @@
       <th>Сумма</th>
       <th>Удалить</th>
     </tr>
-    <tr class="mobile-table-th bordered">
+    <tr ng-if="!viewport()">
       <th>№</th>
       <th>Наименование</th>
       <th>Цена</th>
